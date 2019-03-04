@@ -1,17 +1,16 @@
 
+<div >
+  <h1><%= @trip.user.name%>'s trip to <%= @trip.location.city %></h1>
 
-<h1><%= @trip.user.name%>'s trip to <%= @trip.location.city %></h1>
+  <div id = "trips">
+  <% @trip.memories.each do |memory| %>
 
-<div>
-<% @trip.memories.each do |memory| %>
-  <div>
-    <a href="memories/<%= memory.id %>">
-    <%= memory.activity %>
-    <%= image_tag(memory.primary_img) %>
-    <%= memory.rating %>
-    <%= memory.description %>
-    </a>
+    <div class ="trip-box">
+      <%= link_to image_tag(memory.primary_img, :class => "memory-photo"), memory %>
+      <h4 class = 'trip-desc'><%=  memory.activity %> </h4>
+    </div>
+
+    <% end %>
+
   </div>
-  <% end %>
-
 </div>
