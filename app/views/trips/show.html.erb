@@ -1,0 +1,17 @@
+
+
+<h1><%= @trip.user.name%>'s trip to <%= @trip.location.city %></h1>
+
+<div>
+<% @trip.memories.each do |memory| %>
+  <div>
+    <a href="memories/<%= memory.id %>">
+    <%= memory.activity %>
+    <%= image_tag(memory.primary_img) %>
+    <%= memory.rating %>
+    <%= memory.description %>
+    </a>
+  </div>
+  <% end %>
+
+</div>
