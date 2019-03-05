@@ -1,16 +1,13 @@
-
-
 require 'faker'
 
+# *********** First round of seeds **************
+# Create initial users
 # 20.times do
 # User.create(name: Faker::Name.name, password: "password", country: Faker::Address.country, city: Faker::Address.state, bio: Faker::GreekPhilosophers.quote)
 # end
 
-# User.all.each_with_index do |user, index|
-#   user.update(image_url: "https://randomuser.me/api/portraits/men/#{index+1}.jpg")
-# end
 
-
+# Create locations
 # Location.create(country: "USA", city:"Portland")
 # Location.create(country: "USA", city:"Seattle")
 # Location.create(country: "USA", city:"New York")
@@ -26,21 +23,30 @@ require 'faker'
 # Location.create(country: "Japan", city:"Tokyo")
 # Location.create(country: "China", city:"Beijing")
 
+# ********** Second round of seeds ***************
+
+# update users with profile images
+# User.all.each_with_index do |user, index|
+#   user.update(image_url: "https://randomuser.me/api/portraits/men/#{index+1}.jpg")
+# end
+
+# create trips
 # 50.times do
 #   Trip.create(user_id: User.all.sample.id, location_id: Location.all.sample.id)
 # end
 
- # Memory.create(trip_id: 1, user_id: 1, activity: "Stuff in Seattle", rating: 3, short_desc: "didnt do much", long_desc: "really didnt do much")
- #
- # Comment.create(user_id: 1, memory_id: 1, content: "Comment testing")
 
+
+# ************ Third round of seeds **************
+# Create memories
 activity =["Dinner", "Lunch", "Breakfast", "Show", "Movie", "Museum", "Game", "Bar", "Restaurant", "Park", "Tour"]
-
 images = ['sports','food','nightlife','city']
-
-# 100.times do
+# 300.times do
 #   Memory.create(trip_id: Trip.all.sample.id, user_id: User.all.sample.id, activity: activity.sample, rating: rand(1..5), description: Faker::Lorem.paragraph_by_chars(1000, false), primary_img: "http://lorempixel.com/200/200/#{images.sample} ")
 # end
+
+
+# Create comments
 # 1000.times do
 #   Comment.create(user_id: User.all.sample.id, memory_id: Memory.all.sample.id, content: Faker::Twitter.status(include_user: false)[:text])
 # end
