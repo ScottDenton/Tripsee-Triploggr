@@ -1,7 +1,9 @@
 
 <div >
+  <div>
   <h1><%= @trip.user.name%>'s trip to <%= @trip.location.city %></h1>
-
+  <%= link_to "Add new memory", new_memory_path %>
+</div>
   <div id = "trips">
   <% @trip.memories.each do |memory| %>
 

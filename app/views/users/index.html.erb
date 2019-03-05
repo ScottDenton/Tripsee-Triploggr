@@ -13,10 +13,12 @@
     <%= f.text_field :password, size: '30' %>
     </div>
     <div>
-    <%= f.submit "Login/Signup", :class => 'form-btn' %>
+    <%= f.submit "Login", :class => 'form-btn' %>
     </div>
   </div>
   <% end %>
+
+  <%= link_to "New to the site, sign up here", new_user_path %>
 
 
 </div>

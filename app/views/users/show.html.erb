@@ -6,6 +6,9 @@
     <h4><%= @user.name %></h4>
     <p><%= @user.city%></p>
     <p><%= @user.bio %></p>
+    <%= link_to "My Trips", trip_path(@user) %>
+
+    <%= link_to "Edit my profile", edit_user_path %>
   </div>
 
   <div id = "user-feed">
@@ -22,8 +25,10 @@
         <%= link_to image_tag(trip.memories[-1].primary_img, :class => "big-feed-img"), trip  %>
       </div>
       <div>
-        <%= link_to image_tag(trip.memories[-2].primary_img, :class => "small-feed-img"), trip %>
-        <%= link_to image_tag(trip.memories[1].primary_img, :class => "small-feed-img"), trip %>
+        <% if trip.memories.length >= 3 %>
+          <%= link_to image_tag(trip.memories[-2].primary_img, :class => "small-feed-img"), trip %>
+          <%= link_to image_tag(trip.memories[1].primary_img, :class => "small-feed-img"), trip %>
+        <% end %>
       </div>
 
     </div>

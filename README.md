@@ -22,3 +22,27 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+## Names
+Tripsy
+Tripsee
+Tripbloggr
+Triploggr
+
+
+## Things to do
+<!-- - update login /signup page -->
+<!-- - form for new user -->
+- form for new trip
+- form for new comment
+- form for new memory
+- validation for user creation
+- validations
+- default image for new user
+- user details remain when form wrong
+- proper password
+- feed changes based on user. edit and view trips links need to change/go away
+- redundancy if not enough photos for feed
+- layout with heading login/logout button
+
+- tests

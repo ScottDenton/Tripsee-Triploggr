@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :comments
-  resources :memories
   resources :trips
+  resources :memories
   resources :locations
   resources :users
 
