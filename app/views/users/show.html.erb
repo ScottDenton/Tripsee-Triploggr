@@ -1,1 +1,54 @@
 <h1>Welcome <%= @user.name %></h1>
+
+<div id = "user-page">
+  <div id = "user-profile">
+    <img src= "<%= @user.image_url %>" class = 'user-profile-img'>
+    <h4><%= @user.name %></h4>
+    <p><%= @user.city%></p>
+    <p><%= @user.bio %></p>
+  </div>
+
+  <div id = "user-feed">
+    <% @all_trips.each do |trip|%>
+
+    <div class = 'user-trips-feed'>
+      <div class = 'user-trip-heading'>
+        <%= link_to image_tag(trip.user.image_url, :class => "small-profile"), trip.user %>
+        <h4><%= trip.user.name %>'s trip to <%= trip.location.city %> </h4>
+      </div>
+
+    <div class = "feed-images">
+      <div>
+        <%= link_to image_tag(trip.memories[-1].primary_img, :class => "big-feed-img"), trip  %>
+      </div>
+      <div>
+        <%= link_to image_tag(trip.memories[-2].primary_img, :class => "small-feed-img"), trip %>
+        <%= link_to image_tag(trip.memories[1].primary_img, :class => "small-feed-img"), trip %>
+      </div>
+
+    </div>
+
+  </div>
+    <% end %>
+
+
+  </div>
+
+  <div class = "add-section">
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--  -->

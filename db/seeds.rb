@@ -6,6 +6,9 @@ require 'faker'
 # User.create(name: Faker::Name.name, password: "password", country: Faker::Address.country, city: Faker::Address.state, bio: Faker::GreekPhilosophers.quote)
 # end
 
+# User.all.each_with_index do |user, index|
+#   user.update(image_url: "https://randomuser.me/api/portraits/men/#{index+1}.jpg")
+# end
 
 
 # Location.create(country: "USA", city:"Portland")
@@ -38,6 +41,6 @@ images = ['sports','food','nightlife','city']
 # 100.times do
 #   Memory.create(trip_id: Trip.all.sample.id, user_id: User.all.sample.id, activity: activity.sample, rating: rand(1..5), description: Faker::Lorem.paragraph_by_chars(1000, false), primary_img: "http://lorempixel.com/200/200/#{images.sample} ")
 # end
-1000.times do
-  Comment.create(user_id: User.all.sample.id, memory_id: Memory.all.sample.id, content: Faker::Twitter.status(include_user: false)[:text])
-end
+# 1000.times do
+#   Comment.create(user_id: User.all.sample.id, memory_id: Memory.all.sample.id, content: Faker::Twitter.status(include_user: false)[:text])
+# end

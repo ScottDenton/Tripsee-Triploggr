@@ -5,7 +5,7 @@
   <div id = "trips">
   <% @trip.memories.each do |memory| %>
 
-    <div class ="trip-box">
+    <div class ="trip-box" style="transform: rotate(<%= rand(-30..30)%>deg);">
       <%= link_to image_tag(memory.primary_img, :class => "memory-photo"), memory %>
       <h4 class = 'trip-desc'><%=  memory.activity %> </h4>
     </div>

@@ -17,7 +17,6 @@ h1 {
   font-family: cursive;
   margin:30px auto 5px auto;
   padding: 10px;
-  width: 45%;
   background-color: #E8E3D7;
   color: black;
 }
@@ -28,11 +27,12 @@ h1 {
   background-color: #E8E3D7;
   box-shadow: -5px -5px 10px 1px black;
   transform: rotate(20deg) ;
-  transition: transform .8s ease-in-out;
+  transition: transform .24s ease-in-out;
 }
 
+
 .trip-box:hover {
-  transform: rotate(-20deg);
+  transform: rotate(0deg)!important;
 }
 
 .trip-desc {
