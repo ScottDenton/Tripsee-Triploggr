@@ -2,7 +2,6 @@ class UsersController < ApplicationController
 
   def index
       @user = User.new
-
   end
 
   def trips
@@ -16,8 +15,14 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.image_url ||= "https://pngimage.net/wp-content/uploads/2018/05/default-user-profile-image-png-6.png"
+    if @user
     @user.save
-    redirect_to @user
+    session[:user_id] = @user.id
+    redirect_to user_path(@user)
+    else
+      flash[:message] = "Nuh thats wrong"
+      redirect_to login_path
+    end
   end
 
   def show

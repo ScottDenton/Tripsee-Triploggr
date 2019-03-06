@@ -1,27 +1,4 @@
-<h1>Welcome to our App</h1>
 
-<div id = "login">
-  <%= form_for @user do |f|%>
-  <div class = 'form'>
-    <div>
-    <%= f.label :username%>
-    <%= f.text_field :username, size: '30' %>
-    </div>
-
-    <div>
-    <%= f.label :password%>
-    <%= f.text_field :password, size: '30' %>
-    </div>
-    <div>
-    <%= f.submit "Login", :class => 'form-btn' %>
-    </div>
-  </div>
-  <% end %>
-
-  <%= link_to "New to the site, sign up here", new_user_path %>
-
-
-</div>
 
 
 

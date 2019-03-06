@@ -34,8 +34,8 @@ Triploggr
 <!-- - update login /signup page -->
 <!-- - form for new user -->
 - form for new trip
-- form for new comment
-- form for new memory
+<!-- - form for new comment -->
+<!-- - form for new memory -->
 - comments are linked to user not owner
 - link for memories go to wrong link within trip
 - validation for user creation

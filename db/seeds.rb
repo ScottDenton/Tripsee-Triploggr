@@ -51,3 +51,8 @@ require 'faker'
 # 1000.times do
 #   Comment.create(user_id: User.all.sample.id, memory_id: Memory.all.sample.id, content: Faker::Twitter.status(include_user: false)[:text])
 # end
+
+
+User.all.each do |user|
+    user.update(password: "123")
+   end
