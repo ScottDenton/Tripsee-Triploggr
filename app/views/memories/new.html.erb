@@ -1,5 +1,17 @@
-<%= form_for @memory do |f| %>
 
+<%= form_for [@trip,@memory] do |f|%>
+
+    <%= f.label :activity %>
+    <%= f.text_field :activity %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+
+    <%= f.label :primary_img %>
+    <%= f.text_field :primary_img %>
+
+
+    <%= f.submit %>
 
 
 

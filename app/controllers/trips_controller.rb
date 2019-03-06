@@ -11,4 +11,12 @@ class TripsController < ApplicationController
   def show
     @trip = Trip.find(params[:id])
   end
+
+  def update
+    @trip = Trip.find(params[:id])
+  end
+
+  def trip_params
+    params.require(:trip).permit(:user_id, :location_id)
+  end
 end

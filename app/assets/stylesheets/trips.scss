@@ -20,6 +20,7 @@ h1 {
   background-color: #E8E3D7;
   color: black;
 }
+
 .trip-box {
   margin: 40px auto;
   padding: 20px;
@@ -28,6 +29,7 @@ h1 {
   box-shadow: -5px -5px 10px 1px black;
   transform: rotate(20deg) ;
   transition: transform .24s ease-in-out;
+
 }
 
 
@@ -44,4 +46,7 @@ h1 {
 
 .memory-photo {
   filter: brightness(85%);
+  width: 200px;
+  height: 200px;
+
 }

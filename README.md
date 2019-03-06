@@ -36,9 +36,12 @@ Triploggr
 - form for new trip
 - form for new comment
 - form for new memory
+- link for memories go to wrong link within trip
 - validation for user creation
 - validations
+- rating validations
 - default image for new user
+- memory images all same size when created
 - user details remain when form wrong
 - proper password
 - feed changes based on user. edit and view trips links need to change/go away

@@ -12,6 +12,10 @@
   </div>
 
   <div id = "user-feed">
+  <div class = 'link'>
+    <%= link_to "Log New Trip", new_trip_path  %>
+  </div>
+
     <% @all_trips.each do |trip|%>
 
     <div class = 'user-trips-feed'>

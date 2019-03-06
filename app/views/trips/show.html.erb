@@ -2,13 +2,13 @@
 <div >
   <div>
   <h1><%= @trip.user.name%>'s trip to <%= @trip.location.city %></h1>
-  <%= link_to "Add new memory", new_memory_path %>
+  <%= link_to "Add new memory", new_trip_memory_path(@trip) %>
 </div>
   <div id = "trips">
   <% @trip.memories.each do |memory| %>
 
     <div class ="trip-box" style="transform: rotate(<%= rand(-30..30)%>deg);">
-      <%= link_to image_tag(memory.primary_img, :class => "memory-photo"), memory %>
+      <%= link_to image_tag(memory.primary_img, :class => "memory-photo"), "/trips/#{memory.trip_id}/memories/#{memory.id}" %>
       <h4 class = 'trip-desc'><%=  memory.activity %> </h4>
     </div>
 

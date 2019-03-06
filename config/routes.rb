@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+
+  resources :trips do
+    resources :memories
+  end
+  
   resources :comments
-  resources :trips
-  resources :memories
   resources :locations
   resources :users
 
