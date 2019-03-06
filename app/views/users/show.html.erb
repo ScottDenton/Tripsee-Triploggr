@@ -6,14 +6,14 @@
     <h4><%= @user.name %></h4>
     <p><%= @user.city%></p>
     <p><%= @user.bio %></p>
-    <%= link_to "My Trips", trip_path(@user) %>
+    <%= link_to "My Trips", "/users/#{@user.id}/trips" %>
 
     <%= link_to "Edit my profile", edit_user_path %>
   </div>
 
   <div id = "user-feed">
   <div class = 'link'>
-    <%= link_to "Log New Trip", new_trip_path  %>
+    <%= link_to "Log New Trip", new_user_trip_path(@user)  %>
   </div>
 
     <% @all_trips.each do |trip|%>
@@ -26,12 +26,12 @@
 
     <div class = "feed-images">
       <div>
-        <%= link_to image_tag(trip.memories[-1].primary_img, :class => "big-feed-img"), trip  %>
+        <%= link_to image_tag(trip.memories[-1].primary_img, :class => "big-feed-img"), user_trip_path(trip)  %>
       </div>
       <div>
         <% if trip.memories.length >= 3 %>
-          <%= link_to image_tag(trip.memories[-2].primary_img, :class => "small-feed-img"), trip %>
-          <%= link_to image_tag(trip.memories[1].primary_img, :class => "small-feed-img"), trip %>
+          <%= link_to image_tag(trip.memories[-2].primary_img, :class => "small-feed-img"), user_trip_path(trip) %>
+          <%= link_to image_tag(trip.memories[1].primary_img, :class => "small-feed-img"), user_trip_path(trip) %>
         <% end %>
       </div>
 
