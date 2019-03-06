@@ -7,6 +7,14 @@ class TripsController < ApplicationController
 
   def new
     @trip = Trip.new
+    @user = User.find(session[:user_id])
+  end
+
+  def create
+    @trip = Trip.new(trip_params)
+    @trip.user = User.find(session[:user_id])
+    @trip.save
+    redirect_to user_trip_path(@trip.user, @trip)
   end
 
   def show

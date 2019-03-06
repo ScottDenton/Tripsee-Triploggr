@@ -1,4 +1,4 @@
-
+<% ratings = [1,2,3,4,5] %>
 <%= form_for [@user,@trip,@memory] do |f|%>
 
     <%= f.label :activity %>
@@ -6,6 +6,9 @@
 
     <%= f.label :description %>
     <%= f.text_field :description %>
+
+    <%= f.label :rating %>
+    <%= f.select :rating, [1,2,3,4,5]   %>
 
     <%= f.label :primary_img %>
     <%= f.text_field :primary_img %>

@@ -1,1 +1,8 @@
 <h1> Log new trip</h1>
+<%= form_for [@user, @trip] do |f|%>
+<%= f.label :location %>
+<%= f.collection_select :location_id, Location.all, :id, :city%>
+
+<%= f.submit %>
+
+<% end %>

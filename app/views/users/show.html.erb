@@ -7,9 +7,21 @@
     <h4><%= @user.name %></h4>
     <p><%= @user.city%></p>
     <p><%= @user.bio %></p>
-    <%= link_to "My Trips", "/users/#{@user.id}/trips" %>
 
-    <%= link_to "Edit my profile", edit_user_path %>
+<div>
+  <% if is_current_user? %>
+  <%= link_to "My trips." , "/users/#{@user.id}/trips" %>
+  <% else %>
+  <%= link_to "See #{@user.name}'s trips." , "/users/#{@user.id}/trips" %>
+  <% end %>
+</div>
+<div>
+  <% if is_current_user? %>
+  <%= link_to "Edit my profile", edit_user_path %>
+  <% end %>
+</div>
+
+
   </div>
 
   <div id = "user-feed">
@@ -17,7 +29,7 @@
     <%= link_to "Log New Trip", new_user_trip_path(@user)  %>
   </div>
 
-    <% @all_trips.each do |trip|%>
+    <% @all_trips.reverse.each do |trip|%>
 
     <div class = 'user-trips-feed'>
       <div class = 'user-trip-heading'>
@@ -27,7 +39,9 @@
 
     <div class = "feed-images">
       <div>
-        <%= link_to image_tag(trip.memories[-1].primary_img, :class => "big-feed-img"), user_trip_path(trip)  %>
+        <% if trip.memories.length > 0 %>
+        <%= link_to image_tag(trip.memories[-1].primary_img, :class => "big-feed-img"), user_trip_path(trip.user, trip)  %>
+        <% end %>
       </div>
       <div>
         <% if trip.memories.length >= 3 %>

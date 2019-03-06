@@ -1,4 +1,6 @@
 class MemoriesController < ApplicationController
+  # helper_method :current_user
+
 
   def new
     @trip = Trip.find(params[:trip_id])
@@ -21,6 +23,11 @@ class MemoriesController < ApplicationController
     @trip = @memory.trip
     @user = @trip.user
   end
+
+  # def current_user
+  #   User.find(session[:user_id])
+  # end
+
 
 private
 

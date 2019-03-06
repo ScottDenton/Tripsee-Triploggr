@@ -44,7 +44,7 @@ Triploggr
 - default image for new user
 - memory images all same size when created
 - user details remain when form wrong
-- proper password
+<!-- - proper password -->
 - feed changes based on user. edit and view trips links need to change/go away
 - redundancy if not enough photos for feed
 - layout with heading login/logout button

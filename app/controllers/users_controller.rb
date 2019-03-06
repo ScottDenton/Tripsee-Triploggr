@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  helper_method :is_current_user?
 
   def index
       @user = User.new
@@ -39,6 +40,12 @@ class UsersController < ApplicationController
     @user.update(user_params)
     redirect_to @user
   end
+
+  def is_current_user?
+    session[:user_id] == params[:id].to_i
+  end
+
+
 
 
   private
