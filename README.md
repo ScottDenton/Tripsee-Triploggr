@@ -26,7 +26,7 @@ Things you may want to cover:
 ## Names
 Tripsy
 Tripsee
-Tripbloggr
+Tripblogr
 Triploggr
 
 
@@ -36,6 +36,7 @@ Triploggr
 - form for new trip
 - form for new comment
 - form for new memory
+- comments are linked to user not owner
 - link for memories go to wrong link within trip
 - validation for user creation
 - validations

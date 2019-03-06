@@ -3,6 +3,7 @@ class MemoriesController < ApplicationController
   def new
     @trip = Trip.find(params[:trip_id])
     @memory = @trip.memories.build
+    @user = @trip.user
   end
 
   def create
@@ -11,11 +12,14 @@ class MemoriesController < ApplicationController
     @memory.trip = trip
     @memory.user = trip.user
     @memory.save
-    redirect_to trip_path(trip)
+    redirect_to user_trip_path(trip.user, trip)
   end
 
   def show
     @memory = Memory.find(params[:id])
+    @comment = Comment.new
+    @trip = @memory.trip
+    @user = @trip.user
   end
 
 private
