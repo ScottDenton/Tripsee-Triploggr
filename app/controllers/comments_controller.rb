@@ -6,9 +6,10 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.user = User.find(params[:user_id])
+    @comment.user = User.find(session[:user_id])
     @comment.memory = Memory.find(params[:memory_id])
     @comment.save
+    byebug
     redirect_to user_trip_memory_path(@comment.user, @comment.memory.trip, @comment.memory, @comment)
   end
 
