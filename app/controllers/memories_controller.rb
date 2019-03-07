@@ -22,6 +22,7 @@ class MemoriesController < ApplicationController
     @comment = Comment.new
     @trip = @memory.trip
     @user = @trip.user
+    @favorite = Favorite.new
   end
 
 
