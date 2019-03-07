@@ -28,8 +28,13 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @all_trips = Trip.all
 
+
+    if params[:q] == nil
+      @all_trips = Trip.all
+    else
+      @all_trips = Trip.all.select{|trip| trip.location.city.downcase == params[:q][:location_id].downcase}
+    end
   end
 
   def edit

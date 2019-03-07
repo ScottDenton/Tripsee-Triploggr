@@ -30,7 +30,13 @@
     <%= link_to "Log New Trip", new_user_trip_path(@user), class: "dark-blue"  %>
   </div>
 
-
+<div>
+  <%= form_tag(user_path(@user), method: "get") do %>
+    <%= label_tag(:q, "Search Trips By City:") %>
+    <%= collection_select(:q, :location_id, Location.all, :city, :city) %>
+    <%= submit_tag("Search") %>
+  <% end %>
+</div>
 
     <% @all_trips.reverse.each do |trip|%>
 
