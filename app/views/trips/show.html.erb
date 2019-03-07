@@ -3,7 +3,6 @@
 
 <div >
   <div>
-  <h1><%= @trip.user.name%>'s trip to <%= @trip.location.city %></h1>
   <% if is_current_user? %>
     <%= link_to "Add new memory",  new_user_trip_memory_path(@trip.user,@trip) %>
   <% end %>

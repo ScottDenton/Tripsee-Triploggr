@@ -42,6 +42,7 @@ Triploggr
 - validations
 - rating validations
 - default image for new user
+- polaroids change for different screen sizes
 <!-- - memory images all same size when created -->
 - user details remain when form wrong
 <!-- - proper password -->

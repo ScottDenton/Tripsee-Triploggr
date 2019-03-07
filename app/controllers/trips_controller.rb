@@ -10,6 +10,7 @@ class TripsController < ApplicationController
   def new
     @trip = Trip.new
     @user = User.find(session[:user_id])
+    @location = Location.new
   end
 
   def create
