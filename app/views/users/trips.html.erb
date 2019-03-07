@@ -1,5 +1,11 @@
-<% @user.trips.each do |trip| %>
-<div class='trip-list' >
- <h2 >My trip to <%= trip.location.city %></h2>
-</div>
+
+<% if @user.trips.count == 0 %>
+  <h2>It doesnt appear that you have logged any trips</h2>
+<% else %>
+  <% @user.trips.each do |trip| %>
+  <div class='trip-list' >
+
+   <h2 >My trip to <%= trip.location.city %></h2>
+  </div>
+  <% end %>
 <% end %>

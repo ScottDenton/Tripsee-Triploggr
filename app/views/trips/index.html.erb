@@ -1,7 +1,11 @@
-
-
+<% if @trips.count == 0 %>
+  <h2>It doesnt appear that you have logged any trips</h2>
+<% else %>
   <% @trips.each do |trip| %>
 
   <div> <a href="trips/<%=trip.id%>"><h2><%= trip.user.name%>'s trip to <%= trip.location.city %></h2></a>
-    </div>
+  </div>
   <% end %>
+<% end %>
+
+<%= link_to "Back", user_path(params[:user_id]) %>

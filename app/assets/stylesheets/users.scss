@@ -27,7 +27,7 @@ background-color:rgb(237, 240, 244);
   margin: 15% auto;
   padding: 10px;
   width: 45%;
-  background-color: #E8E3D7;
+  background-color: rgb(42, 43, 42);
   color: black;
 }
 
@@ -130,10 +130,10 @@ padding: 20px;
 #new-user-form {
   text-align: center;
   color: black;
-    background-color: #E8E3D7;
+  background-color: #E8E3D7;
 }
 
-#new-user-form div {
+.form-data {
   padding: 10px;
   margin: 20px;
 }
@@ -148,6 +148,7 @@ padding: 20px;
   padding-top:30px;
 }
 
-.link {
-
+.error_message {
+  color: red;
+  list-style-type: none;
 }
