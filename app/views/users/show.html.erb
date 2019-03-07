@@ -4,20 +4,17 @@
 <div id = "user-page">
   <div id = "user-profile">
     <img src= "<%= @user.image_url %>" class = 'user-profile-img'>
-    <h4 class = "dark-grey"><%= @user.name %></h4>
-    <p class = "light-grey"><%= @user.city%></p>
-    <p class = "light-grey"><%= @user.bio %></p>
+    <h5 class = "dark-grey-faded">@<%= @user.username%></h5>
+    <h4 class = "dark-grey left">Name: <%= @user.name.capitalize %></h4>
+    <h4 class = "dark-grey left">City: <%= @user.city%></h4>
+    <p class = "light-grey justified bio">About: <%= @user.bio %></p>
 
 <div>
   <% if user? %>
-  <%= link_to "My trips." , "/users/#{@user.id}/trips", class: "dark-blue" %>
-  <% else %>
-  <%= link_to "See #{@user.name}'s trips." , "/users/#{@user.id}/trips", class: "dark-blue" %>
-  <% end %>
-</div>
-<div>
-  <% if user? %>
-  <%= link_to "Edit my profile", edit_user_path, class: "dark-blue" %>
+
+    <%= button_to "My Trips", "/users/#{@user.id}/trips", class: "btn btn-outline-primary btn-sm", :method => 'get' %>
+    <%= button_to "Edit Profile", edit_user_path(@user), class: "btn btn-outline-primary btn-sm ", :method => 'get' %>
+    <%= button_to "Log New Trip", new_user_trip_path(@user),:method => 'get', class: "btn btn-outline-primary btn-sm"  %>
   <% end %>
 </div>
 
@@ -26,18 +23,18 @@
 
   <div id = "user-feed">
     <% if user?  %>
-  <div>
-    <%= button_to "Log New Trip", new_user_trip_path(@user),:method => 'get', class: "dark-blue right"  %>
-  </div>
 
-<div>
-  <%= form_tag(user_path(@user), method: "get") do %>
-    <%= label_tag(:q, "Search Trips By City:") %>
-    <%= collection_select(:q, :location_id, Location.all, :city, :city) %>
-    <%= submit_tag("Search") %>
+
+      <div>
+        <%= form_tag(user_path(@user), method: "get") do %>
+          <%= label_tag(:q, "Search Trips By City:") %>
+          <%= collection_select(:q, :location_id, Location.all, :city, :city) %>
+          <%= submit_tag("Search", class: "btn btn-primary btn-sm") %>
+        <% end %>
+      </div>
+      <% else %>
+      <h3><%= current_profile_user.name%>'s Trips</h3>
   <% end %>
-</div>
-<% end %>
 
 <% if session[:user_id] == params[:id].to_i %>
   <% @shown_trips = @all_trips%>
@@ -50,7 +47,13 @@
     <div class = 'user-trips-feed'>
       <div class = 'user-trip-heading'>
         <%= link_to image_tag(trip.user.image_url, :class => "small-profile"), trip.user %>
-        <h4><%= trip.user.name.capitalize %>'s Trip To <%= trip.location.city.capitalize %> </h4>
+
+        <% if user? %>
+        <h4><%= trip.user.name.capitalize %>'s Trip To <%= trip.location.city.titleize %> </h4>
+        <% else %>
+
+        <h4><%= trip.location.city.titleize %> </h4>
+        <% end %>
       </div>
 
 

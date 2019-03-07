@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
-
+ /*
+ *= require font-awesome
+ */
  :root {
    light-blue: rgb(109, 181, 224);
    dark-blue: rgb(62, 133, 185);
@@ -26,7 +28,7 @@
  }
 
 .main-heading {
-  color: white;
+  color: rgb(109, 181, 224);
   font-family:monospace;
 }
 
@@ -34,4 +36,12 @@
  .white a{
    color: white;
    padding: 10px;
+ }
+
+ .no-link {
+   color: rgb(109, 181, 224);
+   text-decoration: none;
+ }
+ .form {
+   margin: 40px auto;
  }

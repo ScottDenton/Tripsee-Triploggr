@@ -93,6 +93,9 @@ padding: 20px;
   .dark-grey {
     color: rgb(42, 43, 42);
   }
+  .dark-grey-faded {
+    color: rgba(42, 43, 42,0.5);
+  }
 
   .light-grey {
     color: rgb(76, 76, 84);
@@ -105,6 +108,23 @@ padding: 20px;
   .light-blue {
     color: rgb(109, 181, 224);
   }
+
+  .justified {
+    text-align: justify;
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .bio {
+    font-size: 16px;
+  }
+
+  // .btn{
+  // margin: 5px;
+  // }
+
 
   .small-profile {
     height: 50px;

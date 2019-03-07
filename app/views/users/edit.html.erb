@@ -1,34 +1,44 @@
-<div id = "new-user-form">
-<%= form_for @user do |f| %>
-<div>
-  <%= f.label :username%>
-  <%= f.text_field :username%>
-</div>
-<div>
-  <%= f.label :name%>
-  <%= f.text_field :name%>
-</div>
-<div>
-  <%= f.label :password%>
-  <%= f.text_field :password%>
-</div>
-<div>
-  <%= f.label :country%>
-  <%= f.text_field :country%>
-</div>
-<div>
-  <%= f.label :city%>
-  <%= f.text_field :city%>
-</div>
-<div>
-  <%= f.label :bio, "Tell us about yourself"%>
-  <%= f.text_area :bio %>
-</div>
-<div>
-  <%= f.label :image_url%>
-  <%= f.text_field :image_url%>
-</div>
 
-  <%= f.submit %>
-<% end %>
+<div id = "new-user-form text-center">
+  <div class="form">
+    <%= form_for @user do |f| %>
+    <% if @errors %>
+    <ul class = "error_message">
+      <% @errors.each do |error| %>
+      <li >  <%= error %> </li>
+      <% end %>
+    </ul>
+    <% end %>
+    <div class = 'form-group white-text'>
+      <%= f.label :username%>
+      <%= f.text_field :username, :class => 'form-control', :placeholder => "Username"%>
+    </div>
+    <div class = 'form-group white-text'>
+      <%= f.label :name%>
+      <%= f.text_field :name, :class => 'form-control', :placeholder => "Name"%>
+    </div>
+    <div class = 'form-group white-text'>
+      <%= f.label :password %>
+      <%= f.text_field :password, :class => 'form-control', :placeholder => "Password" %>
+    </div>
+    <div class = 'form-group white-text'>
+      <%= f.label :country%>
+      <%= f.text_field :country, :class => 'form-control', :placeholder => "Which country are you from"%>
+    </div>
+    <div class = 'form-group white-text'>
+      <%= f.label :city%>
+      <%= f.text_field :city, :class => 'form-control', :placeholder => "What city are you from"%>
+    </div>
+    <div class = 'form-group white-text'>
+      <%= f.label :bio, "Tell us about yourself"%>
+      <%= f.text_area :bio, :class => 'form-control', :placeholder => "Short description about yourself" %>
+    </div>
+    <div class = 'form-group white-text'>
+      <%= f.label :image_url%>
+      <%= f.text_field :image_url, :placeholder => "Profile pic, 'jpg' or 'png' format", :class => 'form-control'%>
+    </div>
+
+      <%= f.submit "Update account", :class => "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>

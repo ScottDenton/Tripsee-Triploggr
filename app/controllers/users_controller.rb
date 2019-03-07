@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   helper_method :user?
   helper_method :current_profiles_trips
+  helper_method :current_profile_user
 
   def index
       @user = User.new
@@ -75,6 +76,10 @@ class UsersController < ApplicationController
   def current_profiles_trips
     user = User.find(params[:id])
     @profiles_trips = Trip.all.select{|trip| trip.user == user}
+  end
+
+  def current_profile_user
+    User.find(params[:id])
   end
 
 

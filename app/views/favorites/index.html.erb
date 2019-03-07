@@ -1,9 +1,24 @@
-My Favorites
-<div>
-<% @favorites.all.uniq.each do |favorite| %>
-<p>
-<%=favorite.memory.activity%> in <%=favorite.memory.trip.location.city %>
----- <%= favorite.memory.trip.user.name %>
+<body class = 'trip_show_controller'>
 
-<% end  %>
+
+<div >
+  <div>
+  <% if is_current_user? %>
+    <%= link_to "Add new memory",  new_user_trip_memory_path(@trip.user,@trip) %>
+  <% end %>
 </div>
+  <div id = "trips">
+  <% @favorites.all.uniq.each do |favorite| %>
+
+    <div class ="trip-box" style="transform: rotate(<%= rand(-30..30)%>deg);">
+      <%= link_to image_tag(favorite.memory.primary_img, :class => "memory-photo"), user_trip_memory_path(favorite.memory.user, favorite.memory.trip, favorite.memory) %>
+
+      <h4 class = 'trip-desc'><%=  favorite.memory.activity %> in <%= favorite.memory.trip.location.city %></h4>
+    </div>
+
+    <% end %>
+
+  </div>
+</div>
+
+</body>

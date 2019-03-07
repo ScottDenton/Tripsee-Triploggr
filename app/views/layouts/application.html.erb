@@ -9,6 +9,9 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Permanent+Marker" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+
+
 
   </head>
 
@@ -23,6 +26,32 @@
         <%= link_to "Home", user_path(session[:user_id]), :class => "home_link" %>
         <% end %>
       </li>
+
+    <li class="nav-item white">
+      <% if !logged_in?  %>
+      <%= link_to "Sign up", new_user_path %>
+      <% end %>
+    </li>
+    <li class="nav-item white">
+      <% if logged_in?  %>
+      <%= link_to "Favorites", favorites_path %>
+      <% end %>
+    </li>
+
+  </ul>
+
+
+  <h1 class = 'dark-grey-bg main-heading'>
+    <% if logged_in? %>
+    <%= link_to 'Tripsee', user_path(session[:user_id]), :class => 'no-link'  %>
+    <% else %>
+    Tripsee
+    <% end %>
+  <small class="text-muted">Find your next holiday</small>
+  </h1>
+
+  <ul class="nav nav-pills">
+
       <li class="nav-item white float-left">
       <% if logged_in? %>
         <%= link_to 'Logout', logout_path, method: 'DELETE'%>
@@ -31,11 +60,8 @@
       <% end %>
     </li>
 
-  </ul>
 
-  <h1 class = 'dark-grey-bg main-heading'>Tripsee
-  <small class="text-muted">Find your next holiday</small>
-  </h1>
+  </ul>
 </nav>
 
 

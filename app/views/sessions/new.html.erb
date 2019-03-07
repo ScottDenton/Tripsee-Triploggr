@@ -1,7 +1,7 @@
 <body class = "controller sessions_controller">
 
 <div id = "login">
-  <div class = 'form'>
+  <div class = 'form' id = "clear">
     <% if flash[:message]%>
     <%= flash[:message] %>
     <% end %>
@@ -20,11 +20,6 @@
     </div>
   </div>
   <% end %>
-
-<div class = 'link'>
-  <%= link_to "New to the site, sign up here", new_user_path %>
-  </div>
-
 
 </div>
 </body>
