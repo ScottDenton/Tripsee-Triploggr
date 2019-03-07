@@ -19,7 +19,6 @@ class UsersController < ApplicationController
     if !@user.image_url.include?('jpg') || !@user.image_url.include?('png')
       @user.image_url = "https://pngimage.net/wp-content/uploads/2018/05/default-user-profile-image-png-6.png"
     end
-    byebug
     if @user
     @user.save
     session[:user_id] = @user.id
@@ -70,6 +69,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :username, :password, :country, :city, :bio, :image_url)
   end
-
-
 end

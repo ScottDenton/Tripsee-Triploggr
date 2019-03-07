@@ -3,9 +3,10 @@ class User < ApplicationRecord
   has_many :locations, through: :trips
   has_many :comments
   has_many :memories
+  has_many :favorites
   has_secure_password
 
-  
+
 
 
 

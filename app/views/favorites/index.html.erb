@@ -1,0 +1,9 @@
+My Favorites
+<div>
+<% @favorites.all.uniq.each do |favorite| %>
+<p>
+<%=favorite.memory.activity%> in <%=favorite.memory.trip.location.city %>
+---- <%= favorite.memory.trip.user.name %>
+
+<% end  %>
+</div>
