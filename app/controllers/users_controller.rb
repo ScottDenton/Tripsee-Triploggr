@@ -15,7 +15,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.image_url ||= "https://pngimage.net/wp-content/uploads/2018/05/default-user-profile-image-png-6.png"
+
+    if !@user.image_url.include?('jpg') || !@user.image_url.include?('png')
+      @user.image_url = "https://pngimage.net/wp-content/uploads/2018/05/default-user-profile-image-png-6.png"
+    end
+    byebug
     if @user
     @user.save
     session[:user_id] = @user.id
