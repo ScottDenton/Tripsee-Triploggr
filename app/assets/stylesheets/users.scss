@@ -82,6 +82,7 @@ padding: 20px;
   .user-trip-heading {
     display: flex;
     text-align: left;
+    color: light-grey;
   }
 
   .feed-images {
@@ -171,4 +172,8 @@ padding: 20px;
 .error_message {
   color: red;
   list-style-type: none;
+}
+.date {
+   color: rgb(76, 76, 84);
+   align-self: right;
 }
