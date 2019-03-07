@@ -1,21 +1,26 @@
-<div>
-  <div>
+<div class = 'text-center '>
+  <div class = 'form'>
     <%= form_for [@user, @trip] do |f|%>
-    <%= f.label :location %>
+    <div class = 'form-group white-text'>
+    <%= f.label :location, "Enter your trips Location" %>
     <%= f.collection_select :location_id, Location.all, :id, :city%>
-
-    <%= f.submit %>
+  </div>
+    <%= f.submit "Select", :class => "btn btn-primary" %>
     <% end %>
   </div>
-  <div>
-    <p>Cant find your city, add a new one right here</p>
-    <%= form_for @location do |f|%>
-    <%= f.label :country, :placeholder => "ex United States" %>
-    <%= f.text_field :country%>
-    <%= f.label :city %>
-    <%= f.text_field :city%>
 
-    <%= f.submit %>
+  <div class = 'form '>
+    <p class = 'white-text'>Cant find your city, add a new one right here</p>
+    <%= form_for @location do |f|%>
+    <div class = 'form-group white-text'>
+      <%= f.label :country, :placeholder => "ex United States" %>
+      <%= f.text_field :country%>
+      </div>
+    <div class = 'form-group white-text'>
+      <%= f.label :city %>
+      <%= f.text_field :city%>
+    </div>
+    <%= f.submit "Add new location", :class => "btn btn-primary" %>
 
     <% end %>
   </div>

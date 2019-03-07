@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   helper_method :user?
+  helper_method :current_profiles_trips
 
   def index
       @user = User.new
@@ -19,14 +20,22 @@ class UsersController < ApplicationController
     if !@user.image_url.include?('jpg') || !@user.image_url.include?('png')
       @user.image_url = "https://pngimage.net/wp-content/uploads/2018/05/default-user-profile-image-png-6.png"
     end
-    if @user
+
+
+   @user.valid?
+
+   if @user && @user.valid?
+
     @user.save
     session[:user_id] = @user.id
+
     redirect_to user_path(@user)
     else
-      flash[:message] = "Nuh thats wrong"
-      redirect_to login_path
+      @errors =  @user.errors.full_messages
+
+      render :new
     end
+
   end
 
   def show
@@ -61,6 +70,11 @@ class UsersController < ApplicationController
 
   def search_by_location(location)
     @trips = Trip.all.select{|trip| trip.location.city == location }
+  end
+
+  def current_profiles_trips
+    user = User.find(params[:id])
+    @profiles_trips = Trip.all.select{|trip| trip.user == user}
   end
 
 

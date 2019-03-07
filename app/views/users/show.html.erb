@@ -1,3 +1,4 @@
+
 <body class = "controller users_controller">
 
 <div id = "user-page">
@@ -16,7 +17,7 @@
 </div>
 <div>
   <% if user? %>
-  <%= link_to "Edit my profile", edit_user_path %>
+  <%= link_to "Edit my profile", edit_user_path, class: "dark-blue" %>
   <% end %>
 </div>
 
@@ -24,6 +25,7 @@
   </div>
 
   <div id = "user-feed">
+    <% if user?  %>
   <div>
     <%= button_to "Log New Trip", new_user_trip_path(@user),:method => 'get', class: "dark-blue right"  %>
   </div>
@@ -35,8 +37,15 @@
     <%= submit_tag("Search") %>
   <% end %>
 </div>
+<% end %>
 
-    <% @all_trips.reverse.each do |trip|%>
+<% if session[:user_id] == params[:id].to_i %>
+  <% @shown_trips = @all_trips%>
+  <% else %>
+  <% @shown_trips = current_profiles_trips %>
+<% end %>
+
+    <% @shown_trips.reverse.each do |trip|%>
 
     <div class = 'user-trips-feed'>
       <div class = 'user-trip-heading'>
