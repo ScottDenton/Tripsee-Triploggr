@@ -35,4 +35,11 @@
    <%= link_to "Back to Trip", user_trip_path(@memory.user, @memory.trip) %>
    </div>
 
+   <div>
+     <%= form_for @favorite do |f| %>
+      <%= f.hidden_field :memory_id, value: @memory.id %><br>
+      <%= f.submit 'Add to Favorites' %>
+    <% end %>
+    </div>
+
  </div>
