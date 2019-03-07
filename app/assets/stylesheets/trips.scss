@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-body {
+.trip_show_controller{
 background-image: url(wood4.jpg)
 }
 
@@ -10,6 +10,7 @@ background-image: url(wood4.jpg)
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
+  padding-top: 50px;
 }
 
 h1 {
@@ -22,7 +23,7 @@ h1 {
 }
 
 .trip-box {
-  margin: 40px auto;
+  margin: 20px 40px;
   padding: 20px;
   border: 1px solid black;
   background-color: #E8E3D7;
@@ -38,9 +39,11 @@ h1 {
 }
 
 .trip-desc {
-  font-size: 1.3em;
   text-align: center;
-  font-family: fantasy;
+  font-family: "Permanent Marker";
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 22px;
   margin-bottom: 1px;
 }
 

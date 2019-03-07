@@ -33,20 +33,20 @@ Triploggr
 ## Things to do
 <!-- - update login /signup page -->
 <!-- - form for new user -->
-- form for new trip
+<!-- - form for new trip -->
 <!-- - form for new comment -->
 <!-- - form for new memory -->
-- comments are linked to user not owner
-- link for memories go to wrong link within trip
+<!-- - comments are linked to user not owner -->
+<!-- - link for memories go to wrong link within trip -->
 - validation for user creation
 - validations
 - rating validations
 - default image for new user
-- memory images all same size when created
+<!-- - memory images all same size when created -->
 - user details remain when form wrong
 <!-- - proper password -->
-- feed changes based on user. edit and view trips links need to change/go away
-- redundancy if not enough photos for feed
+<!-- - feed changes based on user. edit and view trips links need to change/go away -->
+<!-- - redundancy if not enough photos for feed -->
 - layout with heading login/logout button
 
 - tests

@@ -1,5 +1,7 @@
 class TripsController < ApplicationController
 
+
+
   def index
     @trips = Trip.where(user_id: params[:user_id])
 
@@ -24,6 +26,10 @@ class TripsController < ApplicationController
   def update
     @trip = Trip.find(params[:id])
   end
+
+  private
+
+
 
   def trip_params
     params.require(:trip).permit(:user_id, :location_id)

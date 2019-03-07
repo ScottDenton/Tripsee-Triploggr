@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  helper_method :is_current_user?
+  helper_method :user?
 
   def index
       @user = User.new
@@ -29,6 +29,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @all_trips = Trip.all
+
   end
 
   def edit
@@ -41,11 +42,18 @@ class UsersController < ApplicationController
     redirect_to @user
   end
 
-  def is_current_user?
+  def user?
     session[:user_id] == params[:id].to_i
   end
 
+  def search_by_keyword(keyword)
+    @memories = Memory.all.select{|memory| memory.activity.downcase.include?(keyword.downcase)}
+  end
 
+
+  def search_by_location(location)
+    @trips = Trip.all.select{|trip| trip.location.city == location }
+  end
 
 
   private

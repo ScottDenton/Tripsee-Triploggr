@@ -1,10 +1,12 @@
 <div class = 'info'>
   <%= @memory.activity %> <br>
-  <%= image_tag(@memory.primary_img) %> <br>
+  <%= image_tag(@memory.primary_img, :class => "memory_img")%> <br>
   <p>User: <%= @memory.user.name %></p>
   <p>Country: <%= @memory.trip.location.country %></p>
   <p>City: <%= @memory.trip.location.city %></p>
+  <% if @memory.rating %>
   <p>My Rating: <%= @memory.rating %>  </p>
+  <% end %>
   <%= @memory.description %> <br>
 
 </div>

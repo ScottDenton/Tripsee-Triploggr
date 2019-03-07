@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   helper_method :logged_in?
+  helper_method :is_current_user?
   before_action :set_current_user
 
   def set_current_user
@@ -8,6 +9,10 @@ class ApplicationController < ActionController::Base
 
   def logged_in?
     !!@current_user
+  end
+
+  def is_current_user?
+    session[:user_id] == params[:user_id].to_i
   end
 
 end

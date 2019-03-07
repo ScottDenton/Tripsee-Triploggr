@@ -1,22 +1,23 @@
+<body class = "controller users_controller">
 
-<h1>Welcome <%= @user.name %></h1>
+<h1 class = "main-header">Welcome <%= @user.name %></h1>
 
 <div id = "user-page">
   <div id = "user-profile">
     <img src= "<%= @user.image_url %>" class = 'user-profile-img'>
-    <h4><%= @user.name %></h4>
-    <p><%= @user.city%></p>
-    <p><%= @user.bio %></p>
+    <h4 class = "dark-grey"><%= @user.name %></h4>
+    <p class = "light-grey"><%= @user.city%></p>
+    <p class = "light-grey"><%= @user.bio %></p>
 
 <div>
-  <% if is_current_user? %>
-  <%= link_to "My trips." , "/users/#{@user.id}/trips" %>
+  <% if user? %>
+  <%= link_to "My trips." , "/users/#{@user.id}/trips", class: "dark-blue" %>
   <% else %>
-  <%= link_to "See #{@user.name}'s trips." , "/users/#{@user.id}/trips" %>
+  <%= link_to "See #{@user.name}'s trips." , "/users/#{@user.id}/trips", class: "dark-blue" %>
   <% end %>
 </div>
 <div>
-  <% if is_current_user? %>
+  <% if user? %>
   <%= link_to "Edit my profile", edit_user_path %>
   <% end %>
 </div>
@@ -25,28 +26,34 @@
   </div>
 
   <div id = "user-feed">
-  <div class = 'link'>
-    <%= link_to "Log New Trip", new_user_trip_path(@user)  %>
+  <div>
+    <%= link_to "Log New Trip", new_user_trip_path(@user), class: "dark-blue"  %>
   </div>
+
+
 
     <% @all_trips.reverse.each do |trip|%>
 
     <div class = 'user-trips-feed'>
       <div class = 'user-trip-heading'>
         <%= link_to image_tag(trip.user.image_url, :class => "small-profile"), trip.user %>
-        <h4><%= trip.user.name %>'s trip to <%= trip.location.city %> </h4>
+        <h4><%= trip.user.name.capitalize %>'s Trip To <%= trip.location.city.capitalize %> </h4>
       </div>
 
+
     <div class = "feed-images">
+
       <div>
         <% if trip.memories.length > 0 %>
-        <%= link_to image_tag(trip.memories[-1].primary_img, :class => "big-feed-img"), user_trip_path(trip.user, trip)  %>
+        <%= link_to image_tag(trip.memories[0].primary_img, :class => "big-feed-img"), user_trip_path(trip.user, trip)  %>
         <% end %>
       </div>
       <div>
-        <% if trip.memories.length >= 3 %>
-          <%= link_to image_tag(trip.memories[-2].primary_img, :class => "small-feed-img"), user_trip_path(trip) %>
+        <% if trip.memories.length >= 2 %>
           <%= link_to image_tag(trip.memories[1].primary_img, :class => "small-feed-img"), user_trip_path(trip) %>
+          <%end %>
+          <% if trip.memories.length >=3  %>
+          <%= link_to image_tag(trip.memories[2].primary_img, :class => "small-feed-img"), user_trip_path(trip) %>
         <% end %>
       </div>
 
@@ -59,19 +66,16 @@
   </div>
 
   <div class = "add-section">
+    <a href="https://flatironschool.com/">
+    <%= image_tag("flatiron.png", class: "flatiron_ad") %>
+    <%= image_tag("flatiron-rocket.png", class: "flatiron_ad") %>
+    <%= image_tag("fl-logo.png", class: "flatiron_ad flatiron") %>
+    </a>
+
 
   </div>
 </div>
 
 
 
-
-
-
-
-
-
-
-
-
-<!--  -->
+</body>

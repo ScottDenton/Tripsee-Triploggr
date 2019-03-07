@@ -1,11 +1,13 @@
+<body class = "controller sessions_controller">
+
 <h1>Welcome to our App</h1>
 
 <div id = "login">
-  <% if flash[:message]%>
-    <%= flash[:message] %>
-  <% end %>
-  <%= form_tag login_path do%>
   <div class = 'form'>
+    <% if flash[:message]%>
+    <%= flash[:message] %>
+    <% end %>
+    <%= form_tag login_path do%>
     <div>
     <%= label_tag :username%>
     <%= text_field_tag :username %>
@@ -13,7 +15,7 @@
 
     <div>
     <%= label_tag :password%>
-    <%= text_field_tag :password %>
+    <%= password_field_tag :password %>
     </div>
     <div>
     <%= submit_tag "Login", :class => 'form-btn' %>
@@ -21,7 +23,10 @@
   </div>
   <% end %>
 
+<div class = 'link'>
   <%= link_to "New to the site, sign up here", new_user_path %>
+  </div>
 
 
 </div>
+</body>

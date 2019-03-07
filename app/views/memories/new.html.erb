@@ -1,21 +1,30 @@
-<% ratings = [1,2,3,4,5] %>
-<%= form_for [@user,@trip,@memory] do |f|%>
+<div class = 'form'>
+  <%= form_for [@user,@trip,@memory] do |f|%>
+    <div>
+      <%= f.label :activity %>
+      <%= f.text_field :activity, :maxlength => 35, :size => 35, :placeholder => "ex. Dinner at Phils Pizza" %>
+    </div>
 
-    <%= f.label :activity %>
-    <%= f.text_field :activity %>
+    <div>
+      <p><%= f.label :description %></p>
+      <%= f.text_area :description, :rows => 20, :cols => 60 %>
+    </div>
 
-    <%= f.label :description %>
-    <%= f.text_field :description %>
+    <div>
+      <%= f.label :rating %>
+      <%= f.select :rating, [nil, 5,4,3,2,1]   %>
+    </div>
 
-    <%= f.label :rating %>
-    <%= f.select :rating, [1,2,3,4,5]   %>
+    <div>
+      <%= f.label :primary_img, "Cover Photo" %>
+      <%= f.text_field :primary_img, :placeholder => " image url" %>
+    </div>
 
-    <%= f.label :primary_img %>
-    <%= f.text_field :primary_img %>
-
-
-    <%= f.submit %>
+    <div>
+      <%= f.submit %>
+    </div>
 
 
 
 <% end %>
+</div>

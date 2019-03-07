@@ -7,11 +7,16 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Permanent+Marker" />
   </head>
 
   <body>
-    <nav>
-    <%= link_to "Logout", logout_path %>
+    <nav id = 'navbar'>
+      <% if logged_in? %>
+        <%= link_to 'Logout', logout_path, method: 'DELETE'%>
+        <% else %>
+        <%= link_to "Login", login_path %>
+      <% end %>
     </nav>
     <%= yield %>
   </body>
