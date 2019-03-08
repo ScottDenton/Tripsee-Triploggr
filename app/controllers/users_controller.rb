@@ -50,7 +50,10 @@ class UsersController < ApplicationController
   end
 
   def edit
+    if user?
     @user = User.find(params[:id])
+  else
+    redirect_to login_path
   end
 
   def update
