@@ -61,15 +61,15 @@
 
       <div>
         <% if trip.memories.length > 0 %>
-        <%= link_to image_tag(trip.memories[0].primary_img, :class => "big-feed-img"), user_trip_path(trip.user, trip)  %>
+        <%= link_to image_tag(trip.memories[0].primary_img, :class => "big-feed-img img-fluid"), user_trip_path(trip.user, trip)  %>
         <% end %>
       </div>
       <div>
         <% if trip.memories.length >= 2 %>
-          <%= link_to image_tag(trip.memories[1].primary_img, :class => "small-feed-img"), user_trip_path(trip) %>
+          <%= link_to image_tag(trip.memories[1].primary_img, :class => "small-feed-img img-fluid"), user_trip_path(trip) %>
           <%end %>
           <% if trip.memories.length >=3  %>
-          <%= link_to image_tag(trip.memories[2].primary_img, :class => "small-feed-img"), user_trip_path(trip) %>
+          <%= link_to image_tag(trip.memories[2].primary_img, :class => "small-feed-img img-fluid"), user_trip_path(trip) %>
         <% end %>
       </div>
 
