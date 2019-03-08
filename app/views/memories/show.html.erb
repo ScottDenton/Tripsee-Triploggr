@@ -3,6 +3,9 @@
 
 
 <div class = 'memories-container'>
+  <% if memory_user %>
+<%= link_to "Edit Memory", edit_user_trip_memory_path(@memory.user, @memory.trip, @memory), :method => 'get' %>
+  <% end %>
   <div class = 'info'>
     <%= image_tag(@memory.primary_img, :class => "memory_img")%> <br>
     <p>User: <%= @memory.user.name %></p>
@@ -27,6 +30,7 @@
       <%= f.submit "Comment", :class => "btn btn-primary" %>
       <% end %>
     </div>
+
 
       <% @memory.comments.each do |comment| %>
         <div class = 'comments'>

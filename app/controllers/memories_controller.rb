@@ -1,5 +1,5 @@
 class MemoriesController < ApplicationController
-  # helper_method :current_user
+  helper_method :memory_user
 
 
   def new
@@ -23,6 +23,23 @@ class MemoriesController < ApplicationController
     @trip = @memory.trip
     @user = @trip.user
     @favorite = Favorite.new
+  end
+
+  def edit
+    @trip = Trip.find(params[:trip_id])
+    @user = @trip.user
+    @memory = Memory.find(params[:id])
+  end
+
+  def update
+    @memory = Memory.find(params[:id])
+    @memory.update(memory_params)
+    redirect_to user_trip_memory_path(@memory.user, @memory.trip, @memory)
+
+  end
+
+  def memory_user
+    session[:user_id] == params[:user_id].to_i
   end
 
 
