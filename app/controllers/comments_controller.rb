@@ -9,7 +9,6 @@ class CommentsController < ApplicationController
     @comment.user = User.find(session[:user_id])
     @comment.memory = Memory.find(params[:memory_id])
     @comment.save
-    byebug
     redirect_to user_trip_memory_path(@comment.user, @comment.memory.trip, @comment.memory, @comment)
   end
 

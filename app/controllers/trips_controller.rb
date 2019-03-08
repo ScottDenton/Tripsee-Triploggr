@@ -1,9 +1,9 @@
 class TripsController < ApplicationController
-
+helper_method :user_logged_in
 
 
   def index
-    @trips = Trip.where(user_id: params[:user_id])
+    @trips = Trip.where(user_id: session[:user_id])
 
   end
 
@@ -28,8 +28,11 @@ class TripsController < ApplicationController
     @trip = Trip.find(params[:id])
   end
 
-  private
+  def user_logged_in
+    User.find(session[:user_id])
+  end
 
+  private
 
 
   def trip_params
