@@ -28,7 +28,7 @@
  }
 
 .main-heading {
-  color: rgb(109, 181, 224);
+  color: rgb(52, 124, 246);
   font-family:monospace;
 }
 
@@ -39,7 +39,7 @@
  }
 
  .no-link {
-   color: rgb(109, 181, 224);
+   color: rgb(52, 124, 246);
    text-decoration: none;
  }
  .form {
