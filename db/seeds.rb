@@ -7,21 +7,21 @@ require 'faker'
 # User.create(name: Faker::Name.name, password: "password", country: Faker::Address.country, city: Faker::Address.state, bio: Faker::GreekPhilosophers.quote)
 # end
 
-# # Create locations
-# Location.create(country: "USA", city:"Portland")
-# Location.create(country: "USA", city:"Seattle")
-# Location.create(country: "USA", city:"New York")
-# Location.create(country: "USA", city:"Chicago")
-# Location.create(country: "USA", city:"Los Angeles")
-# Location.create(country: "USA", city:"Las Vegas")
-# Location.create(country: "France", city:"Paris")
-# Location.create(country: "England", city:"London")
-# Location.create(country: "Ireland", city:"Dublin")
-# Location.create(country: "Netherlands", city:"Amsterdam")
-# Location.create(country: "Australia", city:"Sydney")
-# Location.create(country: "Indonesia", city:"Bali")
-# Location.create(country: "Japan", city:"Tokyo")
-# Location.create(country: "China", city:"Beijing")
+# Create locations
+Location.create(country: "USA", city:"Portland")
+Location.create(country: "USA", city:"Seattle")
+Location.create(country: "USA", city:"New York")
+Location.create(country: "USA", city:"Chicago")
+Location.create(country: "USA", city:"Los Angeles")
+Location.create(country: "USA", city:"Las Vegas")
+Location.create(country: "France", city:"Paris")
+Location.create(country: "England", city:"London")
+Location.create(country: "Ireland", city:"Dublin")
+Location.create(country: "Netherlands", city:"Amsterdam")
+Location.create(country: "Australia", city:"Sydney")
+Location.create(country: "Indonesia", city:"Bali")
+Location.create(country: "Japan", city:"Tokyo")
+Location.create(country: "China", city:"Beijing")
 
 # ********** Second round of seeds ***************
 
@@ -52,7 +52,7 @@ require 'faker'
 #   Comment.create(user_id: User.all.sample.id, memory_id: Memory.all.sample.id, content: Faker::Twitter.status(include_user: false)[:text])
 # end
 
-
-User.all.each do |user|
-    user.update(password: "123")
-   end
+#
+# User.all.each do |user|
+#     user.update(password: "123")
+#    end

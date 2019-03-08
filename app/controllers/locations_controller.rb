@@ -4,7 +4,7 @@ class LocationsController < ApplicationController
   def create
       @location = Location.new(location_params)
       @user = User.find(session[:user_id])
-        if @location.city.downcase == params[:location][:city].downcase
+        if location_already_created
           flash[:notice] = "This city has already been added"
           redirect_to new_user_trip_path(@user)
         else
@@ -14,7 +14,7 @@ class LocationsController < ApplicationController
   end
 
   def location_already_created
-   Location.all.find{|location| location.city == params[:city]}
+   Location.all.find{|location| location.city == @location.city}
   end
 
 
