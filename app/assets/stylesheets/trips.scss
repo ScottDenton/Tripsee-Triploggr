@@ -24,7 +24,7 @@ h1 {
 
 .trip-box {
   margin: 20px 40px;
-  max-width: 400px;
+  max-width: 320px;
   overflow: hidden;
   padding: 20px;
   border: 1px solid black;
@@ -32,9 +32,7 @@ h1 {
   box-shadow: -5px -5px 10px 1px black;
   transform: rotate(20deg) ;
   transition: transform .24s ease-in-out;
-
 }
-
 
 .trip-box:hover {
   transform: rotate(0deg)!important;
@@ -51,8 +49,8 @@ h1 {
 
 .memory-photo {
   filter: brightness(85%);
-  width: 200px;
-  height: 200px;
+  width: 280px;
+  height: 330px;
 }
 
 .new-trip {
