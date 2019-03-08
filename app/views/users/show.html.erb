@@ -5,7 +5,7 @@
   <div id = "user-profile">
     <img src= "<%= @user.image_url %>" class = 'user-profile-img'>
     <h5 class = "dark-grey-faded">@<%= @user.username%></h5>
-    <h4 class = "dark-grey left">Name: <%= @user.name.capitalize %></h4>
+    <h4 class = "dark-grey left">Name: <%= @user.name.titleize %></h4>
     <h4 class = "dark-grey left">City: <%= @user.city%></h4>
     <p class = "light-grey justified bio">About: <%= @user.bio %></p>
 
