@@ -49,7 +49,7 @@
         <%= link_to image_tag(trip.user.image_url, :class => "small-profile"), trip.user %>
 
         <% if user? %>
-        <h4><%= trip.user.name.capitalize %>'s Trip To <%= trip.location.city.titleize %> </h4>
+        <h4><%= trip.user.name.titleize %>'s Trip To <%= trip.location.city.titleize %> </h4>
         <% else %>
 
         <h4><%= trip.location.city.titleize %> </h4>
