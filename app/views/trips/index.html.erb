@@ -1,11 +1,21 @@
+<div>
 <% if @trips.count == 0 %>
   <h2>It doesnt appear that you have logged any trips</h2>
 <% else %>
   <% @trips.each do |trip| %>
-
-  <div> <a href="trips/<%=trip.id%>"><h2><%= trip.user.name%>'s trip to <%= trip.location.city %></h2></a>
+  <div class = "div-cards">
+    <a href="trips/<%=trip.id%>">
+    <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title"><%= trip.location.city %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= trip.created_at.year %></h6>
+      </div>
+    </div>
   </div>
+  </a>
   <% end %>
 <% end %>
+<%= button_to "Log New Trip", new_user_trip_path(user_logged_in),:method => 'get', class: "btn btn-outline-primary btn-sm"  %>
+<%= button_to "Back", user_path(params[:user_id]), :class => "btn btn-outline-primary btn-sm", :method => 'get' %>
 
-<%= link_to "Back", user_path(params[:user_id]) %>
+</div>

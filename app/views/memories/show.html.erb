@@ -1,45 +1,53 @@
-<div class = 'info'>
-  <%= @memory.activity %> <br>
-  <%= image_tag(@memory.primary_img, :class => "memory_img")%> <br>
-  <p>User: <%= @memory.user.name %></p>
-  <p>Country: <%= @memory.trip.location.country %></p>
-  <p>City: <%= @memory.trip.location.city %></p>
-  <% if @memory.rating %>
-  <p>My Rating: <%= @memory.rating %>  </p>
-  <% end %>
-  <%= @memory.description %> <br>
 
-</div>
-
-<div class = "info">
+<body class = 'memories-controller'>
 
 
-  <h3>Comments</h3>
-
-  <div>
-    <%= form_for [@user, @trip, @memory, @comment] do |f| %>
-    <%= f.label :content %>
-    <%= f.text_area :content %>
-    <%= f.submit %>
+<div class = 'memories-container'>
+  <div class = 'info'>
+    <%= image_tag(@memory.primary_img, :class => "memory_img")%> <br>
+    <p>User: <%= @memory.user.name %></p>
+    <p>Country: <%= @memory.trip.location.country %></p>
+    <p>City: <%= @memory.trip.location.city %></p>
+    <% if @memory.rating %>
+    <p>My Rating: <%= @memory.rating %>  </p>
     <% end %>
+    <%= @memory.description %> <br>
+
   </div>
 
-    <% @memory.comments.each do |comment| %>
-      <div>
-        <p><%= comment.content %></p>
-        <p> Written by: <%= comment.user.name %></p>
+  <div class = "info">
+    <div class = "comments-section">
+    <h3>Comments</h3>
+
+    <div class = comment-form>
+      <%= form_for [@user, @trip, @memory, @comment] do |f| %>
+      <div class = 'form-group white-text'>
+      <%= f.text_area :content, :class => 'form-control' %>
       </div>
-    <% end %>
-
-  <div>
-   <%= link_to "Back to Trip", user_trip_path(@memory.user, @memory.trip) %>
-   </div>
-
-   <div>
-     <%= form_for @favorite do |f| %>
-      <%= f.hidden_field :memory_id, value: @memory.id %><br>
-      <%= f.submit 'Add to Favorites' %>
-    <% end %>
+      <%= f.submit "Comment", :class => "btn btn-primary" %>
+      <% end %>
     </div>
 
- </div>
+      <% @memory.comments.each do |comment| %>
+        <div class = 'comments'>
+          <p><%= comment.content %></p>
+          <p class = 'small' > Written by: <%= comment.user.name %></p>
+        </div>
+      <% end %>
+
+    <div>
+     <%= link_to "Back to Trip", user_trip_path(@memory.user, @memory.trip) %>
+     </div>
+
+     <div>
+       <%= form_for @favorite do |f| %>
+        <%= f.hidden_field :memory_id, value: @memory.id %><br>
+        <%= f.submit 'Add to Favorites', :class => "btn btn-primary right"  %>
+      <% end %>
+      </div>
+</div>
+  </div>
+  </div>
+
+
+</body>

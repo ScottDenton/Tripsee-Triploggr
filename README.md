@@ -31,6 +31,7 @@ Triploggr
 
 
 ## Things to do
+- edit memories
 <!-- - update login /signup page -->
 <!-- - form for new user -->
 <!-- - form for new trip -->
@@ -38,16 +39,14 @@ Triploggr
 <!-- - form for new memory -->
 <!-- - comments are linked to user not owner -->
 <!-- - link for memories go to wrong link within trip -->
-- validation for user creation
-- validations
+<!-- - validation for user creation
+- validations -->
 - rating validations
 <!-- - default image for new user -->
 - polaroids change for different screen sizes
 <!-- - memory images all same size when created -->
-- user details remain when form wrong
+<!-- - user details remain when form wrong -->
 <!-- - proper password -->
 <!-- - feed changes based on user. edit and view trips links need to change/go away -->
 <!-- - redundancy if not enough photos for feed -->
-- layout with heading login/logout button
-
-- tests
+<!-- - layout with heading login/logout button -->

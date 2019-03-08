@@ -4,7 +4,7 @@
 <div >
   <div>
   <% if is_current_user? %>
-    <%= link_to "Add new memory",  new_user_trip_memory_path(@trip.user,@trip) %>
+    <%= link_to "Add new memory",  new_user_trip_memory_path(@trip.user,@trip), :class => "btn btn-primary" %>
   <% end %>
 </div>
   <div id = "trips">

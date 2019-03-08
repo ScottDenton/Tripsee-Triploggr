@@ -1,27 +1,27 @@
 <div class = 'form'>
   <%= form_for [@user,@trip,@memory] do |f|%>
-    <div>
+      <div class = 'form-group white-text'>
       <%= f.label :activity %>
-      <%= f.text_field :activity, :maxlength => 35, :size => 35, :placeholder => "ex. Dinner at Phils Pizza" %>
+      <%= f.text_field :activity, :maxlength => 35, :size => 35, :placeholder => "ex. Dinner at Phils Pizza",:class => 'form-control' %>
     </div>
 
-    <div>
+    <div class = 'form-group white-text'>
       <p><%= f.label :description %></p>
-      <%= f.text_area :description, :rows => 20, :cols => 60 %>
+      <%= f.text_area :description, :class => 'form-control', :placeholder => "Tell us about this specific memory" %>
     </div>
 
-    <div>
+    <div class = 'form-group white-text'>
       <%= f.label :rating %>
-      <%= f.select :rating, [nil, 5,4,3,2,1]   %>
+      <%= f.select :rating, [nil, 5,4,3,2,1], :class => 'form-control'   %>
     </div>
 
-    <div>
+    <div class = 'form-group white-text'>
       <%= f.label :primary_img, "Cover Photo" %>
-      <%= f.text_field :primary_img, :placeholder => " image url" %>
+      <%= f.text_field :primary_img, :placeholder => " Image url", :class => 'form-control' %>
     </div>
 
     <div>
-      <%= f.submit %>
+      <%= f.submit "Create Memory", :class => "btn btn-primary" %>
     </div>
 
 

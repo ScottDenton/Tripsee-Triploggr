@@ -2,6 +2,7 @@ class UsersController < ApplicationController
   helper_method :user?
   helper_method :current_profiles_trips
   helper_method :current_profile_user
+  helper_method :user_logged_in
 
   def index
       @user = User.new
@@ -80,6 +81,10 @@ class UsersController < ApplicationController
 
   def current_profile_user
     User.find(params[:id])
+  end
+
+  def user_logged_in
+    User.find(session[:user_id])
   end
 
 

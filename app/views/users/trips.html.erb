@@ -9,3 +9,15 @@
   </div>
   <% end %>
 <% end %>
+
+<div id = "trips">
+<% @user.trips.memories.each do |memory| %>
+
+  <div class ="trip-box" style="transform: rotate(<%= rand(-30..30)%>deg);">
+    <%= link_to image_tag(memory.primary_img, :class => "memory-photo"), user_trip_memory_path(memory.user, memory.trip, memory) %>
+    <h4 class = 'trip-desc'><%=  memory.activity %> </h4>
+  </div>
+
+  <% end %>
+
+</div>
