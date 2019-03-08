@@ -23,9 +23,7 @@ class UsersController < ApplicationController
       @user.image_url = "https://pngimage.net/wp-content/uploads/2018/05/default-user-profile-image-png-6.png"
     end
 
-
    @user.valid?
-
    if @user && @user.valid?
 
     @user.save
