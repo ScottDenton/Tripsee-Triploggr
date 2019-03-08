@@ -10,7 +10,8 @@ gem 'faker'
 gem 'bcrypt', '~> 3.1', '>= 3.1.12'
 gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~>1.3.6'
+gem 'pg', '~> 1.1', '>= 1.1.4'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
